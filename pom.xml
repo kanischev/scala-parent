@@ -9,12 +9,14 @@
 
     <properties>
         <scala.version>2.11.6</scala.version>
+        <scala.modules.version>1.0.4</scala.modules.version>
         <scalaBinaryVersion>2.11</scalaBinaryVersion>
         <jetty.version>7.6.19.v20160209</jetty.version>
         <scala.test.version>2.2.6</scala.test.version>
         <h2.version>1.2.138</h2.version>
         <maven.release.plugin.version>2.5</maven.release.plugin.version>
         <maven.compiler.plugin.version>3.1</maven.compiler.plugin.version>
+        <logback.version>1.1.7</logback.version>
     </properties>
 
     <dependencyManagement>
@@ -33,6 +35,16 @@
                 <groupId>org.scala-lang</groupId>
                 <artifactId>scala-compiler</artifactId>
                 <version>${scala.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scala-lang.modules</groupId>
+                <artifactId>scala-xml_${scalaBinaryVersion}</artifactId>
+                <version>${scala.modules.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.scala-lang.modules</groupId>
+                <artifactId>scala-parser-combinators_${scalaBinaryVersion}</artifactId>
+                <version>${scala.modules.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.scalatest</groupId>
@@ -88,15 +100,9 @@
                 <version>1.5.1</version>
             </dependency>
             <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-api</artifactId>
-                <version>1.7.5</version>
-                <scope>compile</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.slf4j</groupId>
-                <artifactId>slf4j-log4j12</artifactId>
-                <version>1.7.5</version>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
                 <scope>compile</scope>
             </dependency>
             <dependency>
